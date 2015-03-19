@@ -103,13 +103,13 @@ class SourceCodeGenerator :
                 meta_hash['minLength'] = minLength
 
         if schemeObj.rootBaseType() == "number":
-            hasMax, maxLength = schemeObj.getMaxValue()
+            hasMax, maxValue = schemeObj.getMaxValue()
             if hasMax:
-                meta_hash['maxValue'] = maxLength
+                meta_hash['maxValue'] = str(maxValue)
 
-            hasMin, minLength = schemeObj.getMinValue()
+            hasMin, minValue = schemeObj.getMinValue()
             if hasMin:
-                meta_hash['minValue'] = minLength
+                meta_hash['minValue'] = str(minValue)
 
         if schemeObj.rootBaseType() == "array":
             hasMax, maxLength = schemeObj.getMaxCount()
@@ -231,13 +231,13 @@ class SourceCodeGenerator :
                 propertyHash['minLength'] = minLength
 
         if propObj.rootBaseType() == "number":
-            hasMax, maxLength = propObj.getMaxValue()
+            hasMax, maxValue = propObj.getMaxValue()
             if hasMax:
-                propertyHash['maxValue'] = maxLength
+                propertyHash['maxValue'] = str(maxValue)
 
-            hasMin, minLength = propObj.getMinValue()
+            hasMin, minValue = propObj.getMinValue()
             if hasMin:
-                propertyHash['minValue'] = minLength
+                propertyHash['minValue'] = str(minValue)
 
         if propObj.rootBaseType() == "array":
             hasMax, maxLength = propObj.getMaxCount()
