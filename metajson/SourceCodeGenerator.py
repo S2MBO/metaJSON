@@ -94,6 +94,7 @@ class SourceCodeGenerator :
             if hasRegex:
                 meta_hash['regex'] = regex
 
+        if schemeObj.rootBaseType() == "string" or schemeObj.rootBaseType() == "data":
             hasMax, maxLength = schemeObj.getMaxLength()
             if hasMax:
                 meta_hash['maxLength'] = maxLength
@@ -102,7 +103,7 @@ class SourceCodeGenerator :
             if hasMin:
                 meta_hash['minLength'] = minLength
 
-        if schemeObj.rootBaseType() == "number":
+        if schemeObj.rootBaseType() == "number" or schemeObj.rootBaseType() == "date":
             hasMax, maxValue = schemeObj.getMaxValue()
             if hasMax:
                 meta_hash['maxValue'] = str(maxValue)
@@ -221,7 +222,8 @@ class SourceCodeGenerator :
             hasRegex, regex = propObj.getRegex()
             if hasRegex:
                 propertyHash['regex'] = regex
-
+           
+        if propObj.rootBaseType() == "string" or propObj.rootBaseType() == "data":
             hasMax, maxLength = propObj.getMaxLength()
             if hasMax:
                 propertyHash['maxLength'] = maxLength
@@ -230,7 +232,7 @@ class SourceCodeGenerator :
             if hasMin:
                 propertyHash['minLength'] = minLength
 
-        if propObj.rootBaseType() == "number":
+        if propObj.rootBaseType() == "number" or propObj.rootBaseType() == "date":
             hasMax, maxValue = propObj.getMaxValue()
             if hasMax:
                 propertyHash['maxValue'] = str(maxValue)
