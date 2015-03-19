@@ -29,6 +29,17 @@
         if (*error) {
             return self;
         }
+        if (self.type.length < 0) {
+            NSDictionary *userInfo = @{@"propertyName" : @"type",
+                                       @"key" : @"type",
+                                       @"reason" : @"min value validation error",
+                                       @"objectClass" : NSStringFromClass([self class])
+                                       };
+            *error = [NSError errorWithDomain:kErrorDomain_parser code:kErrorDomain_parser_valueIsNotValid userInfo:userInfo];
+            NSLog(@"%@", *error);
+            return self;
+        }
+
         self.advantage = [APIParser numberFromResponseDictionary:dic forKey:@"advantage" acceptNil:NO error:error];
         if (*error) {
             return self;

@@ -107,7 +107,8 @@
                 "name" : "type",
                 "base-type" : "number",
                 "description" : "the type of product",
-                "required" : 1
+                "required" : 1,
+                "minValue" : 0
             },
             {
                 "name" : "advantage",
