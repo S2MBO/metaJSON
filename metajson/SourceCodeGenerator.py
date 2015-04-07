@@ -315,7 +315,7 @@ class SourceCodeGenerator :
         hashParams["_snakecase"] =  self.lambda_snakecase
         hashParams["_upper_snakecase"] =  self.lambda_upper_snakecase
         if schemeObj.getScheme(schemeObj.base_type):
-            hashParams['baseClassName'] = schemeObj.getScheme(schemeObj.base_type).getClassName()
+            hashParams['baseClassName'] = schemeObj.getScheme(schemeObj.base_type).getFileClassName()
 
         if schemeObj.base_type == 'object':
             hashParams['baseTypeIsObject'] = True

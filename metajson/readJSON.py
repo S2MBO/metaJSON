@@ -127,7 +127,7 @@ def main(argv=sys.argv):
                 for template_filename in templateCodeGen.json_template_files:
                     template = open(template_filename)
                     content = codeGen.render(obj, template.read())
-                    file = templateCodeGen.create_template_output_file(template_filename, obj.getClassName())
+                    file = templateCodeGen.create_template_output_file(template_filename, obj.getFileClassName())
                     try:
                         file.write(content)
                     finally :

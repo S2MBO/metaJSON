@@ -1,4 +1,8 @@
 -
+  name: base
+  base-type: object
+  description: 'Base class for all JSON Objects'
+-
   name: sender
   base-type: object
   description: 'sender info.'

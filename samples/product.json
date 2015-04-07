@@ -1,4 +1,9 @@
 [
+   {
+        "name": "base",
+        "description": "Base class for all JSON Objects",
+        "base-type": "object"
+    },
     {
         "name" : "sender",
         "base-type" : "object",

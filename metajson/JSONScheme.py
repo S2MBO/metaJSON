@@ -249,6 +249,14 @@ class JSONScheme :
 
         print "error : " + self.type_name + " has no Class Name."
         return ""
+    
+    def getFileClassName(self):
+        if self.rootBaseType() == "object" :
+          className = self.type_name.upper()
+          className = self.projectPrefix + className[:1] + self.type_name[1:] + self.objectSuffix
+          return className
+        print "error : " + self.type_name + " has no Class Name."
+        return ""
 
     def getMachineClassName(self):
 
